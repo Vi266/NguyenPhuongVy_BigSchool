@@ -17,7 +17,7 @@ namespace _1911065716_NguyenPhuongVy_BigSchool.Models
             return userIdentity;
         }
     }
-
+    //commit len
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
