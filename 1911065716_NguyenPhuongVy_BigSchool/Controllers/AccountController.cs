@@ -66,7 +66,7 @@ namespace _1911065716_NguyenPhuongVy_BigSchool.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel)
+        public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
             if (!ModelState.IsValid)
             {
@@ -89,11 +89,6 @@ namespace _1911065716_NguyenPhuongVy_BigSchool.Controllers
                     ModelState.AddModelError("", "Invalid login attempt.");
                     return View(model);
             }
-        }
-
-        private ActionResult View(object model)
-        {
-            throw new NotImplementedException();
         }
 
         //
@@ -156,7 +151,7 @@ namespace _1911065716_NguyenPhuongVy_BigSchool.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Name = model.Name };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
