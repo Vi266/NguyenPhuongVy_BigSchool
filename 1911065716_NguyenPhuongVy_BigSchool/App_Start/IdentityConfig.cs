@@ -105,5 +105,10 @@ namespace _1911065716_NguyenPhuongVy_BigSchool
         {
             return new ApplicationSignInManager(context.GetUserManager<ApplicationUserManager>(), context.Authentication);
         }
+
+        internal Task SignAsync(ApplicationUser user, bool isPersisten, bool rememberBrowser)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

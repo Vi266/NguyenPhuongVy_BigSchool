@@ -66,7 +66,7 @@ namespace _1911065716_NguyenPhuongVy_BigSchool.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
+        public async Task<ActionResult> Register(RegisterViewModel)
         {
             if (!ModelState.IsValid)
             {
@@ -89,6 +89,11 @@ namespace _1911065716_NguyenPhuongVy_BigSchool.Controllers
                     ModelState.AddModelError("", "Invalid login attempt.");
                     return View(model);
             }
+        }
+
+        private ActionResult View(object model)
+        {
+            throw new NotImplementedException();
         }
 
         //
